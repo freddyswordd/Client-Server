@@ -14,8 +14,8 @@ body {
 .header {
     padding: 60px;
     text-align: center;
-    background: #7bdb63;
-    color: white;
+    background: #1eb457;
+    color: rgb(255, 255, 255);
 }
 
 /* Increase the font size of the h1 element */
@@ -67,5 +67,33 @@ body {
 
 </div>
 
+
 </body>
+
+<form action="action_page.php">
+  
+    <div align="right">
+    <br></br>
+      <label for="uname"><b>Brugernavn</b></label>
+      <input type="text" placeholder="Skriv Brugernavn" name="uname" required>
+      <br></br>
+  
+      <label for="psw"><b>Kodeord</b></label>
+      <input type="password" placeholder="Skriv Kodeord" name="psw" required>
+      <br></br>
+      <input type="checkbox" checked="checked" name="Husk mig"> Husk mig
+      <button type="submit">Log på</button>
+
+      <label>
+
+        <br></br>  
+        <button type="newuser">Opret profil</button>
+      </label>
+    </div>
+
+
+  </form>
+
+
+
 </html>
