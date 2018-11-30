@@ -19,16 +19,16 @@ if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($
     $db_name = "Medicin";
 
     #laver forbindelsen
-    $conn = new mysqli_connect($host, $db_username, $db_password, $db_name);
+    $conn = new mysqli($host, $db_username, $db_password, $db_name);
 
     if (mysqli_connect_error()){
         die('connect error('.mysqli_connect_errno().')'. mysqli_connect_error());
     }else{
-        $SELECT ="SELECT cprnr from profiler where crpnr=? Limit 1";
-        $INSERT = "INSERT Into profiler (cprnr, f_navn, e_navn, ken, vegt, adr, hus_nr, tlf_nr, mail) values(?,?,?,?,?,?,?,?,?)";
+        $SELECT ="SELECT cprnr from profiler where cprnr=? Limit 1";
+        $INSERT = "INSERT Into profiler (cprnr, fornavn, efternavn, ken, vegt, adresse, husnummer, telefonnummer, mail) values(?,?,?,?,?,?,?,?,?)";
 
-        $stmt = $conn->prepare($SELECT);
-        $stmt->bind_param("i",$CPRnr);
+        $stmt = $conn -> prepare($SELECT);
+        $stmt->bind_param("i", $CPRnr);
         $stmt->execute();
         $stmt->bind_result($CPRnr);
         $stmt->store_result();
@@ -38,9 +38,10 @@ if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($
             $stmt->close();
 
             $stmt = $conn->prepare($INSERT);
-            $stmt->bind_param("issiisiis",$CPRnr, $f_navn, $e_navn, $ken, $vegt, $adr, $hus_nr, $tlf_nr, $mail);
+            $stmt->bind_param("isssisiis",$CPRnr, $f_navn, $e_navn, $ken, $vegt, $adr, $hus_nr, $tlf_nr, $mail);
             $stmt->execute();
-            echo "Data var indsat med succes";
+            #echo "Data var indsat med succes";
+            header('Location: Brugerside.html');
         }else{
             echo "cprnummeret er allerede i brug";
         }
@@ -52,5 +53,6 @@ if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($
      die();
 }
 ?>
+
 
 
