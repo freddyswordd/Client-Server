@@ -1,3 +1,12 @@
+<<?php
+include('session.php');
+if(!isset($_SESSION['login_cpr'])){
+    header("location:index.php");
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,10 +70,13 @@ body {
 <div class="navbar">
   <a href="#">Min Plan</a>
   <a href="#">Min Læge</a>
-  <a href="#" class="right">Log ud</a>
+  <a href="log_ud.php"> Log ud</a> 
 
 
 </div>
+
+<b id="velkommen">Velkommen : <i><?php echo($_SESSION['login_cpr']); ?></i></b>
+
 
 
 </body>
