@@ -44,28 +44,28 @@ body {font-family: Verdana, sans-serif;}
 
 .weekdays li {
     display: inline-block;
-    width: 13.6%;
+    width: 11%;
     color: #666;
     text-align: center;
 }
 
-.days {
+.time {
     padding: 10px 0;
     background: #eee;
     margin: 0;
 }
 
-.days li {
+.time li {
     list-style-type: none;
     display: inline-block;
-    width: 13.6%;
+    width: 11%;
     text-align: center;
     margin-bottom: 5px;
     font-size:12px;
     color: #777;
 }
 
-.days li .active {
+.time li .active {
     padding: 5px;
     background: #1abc9c;
     color: white !important
@@ -73,35 +73,36 @@ body {font-family: Verdana, sans-serif;}
 
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
-    .weekdays li, .days li {width: 13.1%;}
+    .weekdays li, .time li {width: 13.1%;}
 }
 
 @media screen and (max-width: 420px) {
-    .weekdays li, .days li {width: 12.5%;}
-    .days li .active {padding: 2px;}
+    .weekdays li, .time li {width: 12.5%;}
+    .time li .active {padding: 2px;}
 }
 
 @media screen and (max-width: 290px) {
-    .weekdays li, .days li {width: 12.2%;}
+    .weekdays li, .time li {width: 12.2%;}
 }
 </style>
 </head>
 <body>
 
-<h1>CSS Calendar</h1>
+<h1>Min Medicin Kalender</h1>
 
 <div class="month">      
   <ul>
     <li class="prev">&#10094;</li>
     <li class="next">&#10095;</li>
     <li>
-      August<br>
-      <span style="font-size:18px">2017</span>
+      December<br>
+      <span style="font-size:18px">2018</span>
     </li>
   </ul>
 </div>
 
 <ul class="weekdays">
+  <li>Tid</li>   
   <li>Mo</li>
   <li>Tu</li>
   <li>We</li>
@@ -111,38 +112,11 @@ body {font-family: Verdana, sans-serif;}
   <li>Su</li>
 </ul>
 
-<ul class="days">  
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li>11</li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
+<ul class="time">  
+  <li>Morgen</li>
+  <li>Middag</li>
+  <li>Aften</li>
+  <li>Nat</li>
 </ul>
 
 </body>
