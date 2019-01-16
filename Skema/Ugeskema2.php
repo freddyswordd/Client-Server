@@ -4,9 +4,9 @@
 <style>
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
   grid-gap: 10px;
-  background-color: #2196F3;
+  background-color: #A9A9A9;
   padding: 10px;
 }
 
@@ -104,26 +104,43 @@
   <li>Onsdag</li>
   <li>Torsdag</li>
   <li>Fredag</li>
-  <li>Lørdag</li>
-  <li>Søndag</li>
+  <li>Lordag</li>
+  <li>Sondag</li>
 </ul>
 
 <div class="grid-container">
-  <div class="item1">Morgen</div>
-  <div class="item2">Ma Mor</div>
-  <div class="item3">TI Dag</div>  
-  <div class="item4">On Dag</div>
-  <div class="item5">5</div>
-  <div class="item6">6</div>
-  <div class="item7">7</div>
-  <div class="item8">8</div>  
+  <div class="item1">Morgen </div>
+  <div class="item2">  5-11 </div>
+  <div class="item3">  5-11 </div>  
+  <div class="item4">  5-11 </div>
+  <div class="item5">  5-11 </div>
+  <div class="item6">  5-11 </div>
+  <div class="item7">  5-11 </div>
+  <div class="item8">  5-11 </div>  
   <div class="item9">Middag</div>
-  <div class="item10">10</div>
-  <div class="item11">11</div>
-  <div class="item12">12</div>
-  <div class="item13">13</div>
-  <div class="item14">14</div>
-  <div class="item15">15</div>
+  <div class="item10">  11-17 </div>
+  <div class="item11">  11-17 </div>
+  <div class="item12">  11-17 </div>
+  <div class="item13">  11-17 </div>
+  <div class="item14">  11-17 </div>
+  <div class="item15">  11-17 </div>
+  <div class="item15">  11-17 </div>
+  <div class="item15">Aften</div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  17-23 </div>
+  <div class="item15">  Nat </div>
+  <div class="item15">  23-5 </div>
+  <div class="item15">  23-5 </div>
+  <div class="item15">  23-5 </div>
+  <div class="item15">  23-5 </div>
+  <div class="item15">  23-5 </div>
+  <div class="item15">  23-5 </div>
+  <div class="item15">  23-5 </div>
 </div>
 
 </body>
