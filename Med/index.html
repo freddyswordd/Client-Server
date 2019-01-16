@@ -13,10 +13,19 @@ body {
 }
 
 .format{
-
-    padding: 90px;
-    float:right;
+    position: relative;
+    left : 0px;
+    top : 0px;
+    z-index : 10;
 }
+
+.formatny{
+    position: relative;
+    left : 983px;
+    top : 40px;
+    z-index : 10;
+}
+
 /* Style the header */
 .header {
     padding: 60px;
@@ -56,6 +65,15 @@ body {
     background-color: #ddd;
     color: black;
 }
+
+/* makes a grid */
+.grid-container {
+  display: grid;
+  grid: 150px / auto auto;
+  grid-gap: 10px;
+
+}
+
 </style>
 </head>
 <body>
@@ -78,6 +96,8 @@ body {
 </body>
 
 <form action="connect.php" method="post">
+  <div class="grid-container">
+        <img src="glade.jpg"> 
   
     <div class="format">
     <br></br>
@@ -89,14 +109,22 @@ body {
       <input type="password" placeholder="Skriv Kodeord" name="password" required>
       <br></br>
       <input type="checkbox" checked="checked" name="Husk mig"> Husk mig
+      
       <button type="submit">Log på</button>
+      <br></br> 
 
+      <label>
+        <a name="register"> eller register dig som ny bruger </a>
+      </label>
+
+      
     </div>
+</div>
 </form>
 
 <form action="nybruger.html" method="post">
 
-    <div class="format">
+    <div class="formatny">
         <label>
         <button type="newuser">Opret profil</button>
         </label>
