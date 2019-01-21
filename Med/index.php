@@ -3,7 +3,7 @@
 
 include('connect.php');
 if(isset($SESSION['login_cpr'])){
-    header("location: Brugerside.php");
+    header("location: brugerside.php");
 }
 
 
