@@ -64,7 +64,7 @@ body {
 
 
     </div>
-</form>
+
 <div class="header">
   <h1>Min Medicin Læge</h1>
   <p>Din hjælp til at huske medicin</p>
@@ -82,6 +82,10 @@ body {
 <br></br>
 
 </body>
+
+<form action="nyrecept.php" method="post">
+
+
 <label for="pillenavn"><b>Pillenavn</b></label>
 <input type="pillenavn"  name="pillenavn" required>
 <br></br>
@@ -98,14 +102,12 @@ body {
 <label for="CPR"><b>CPR-nr</b></label>
 <input type="CRP" name="CPR" required>
 <br></br>
-
-<form action="registrernyprofil.php" method="post">
   
  
       <button type="submit">Send</button>
 
+</form>
 
-</body>
 
 
 
