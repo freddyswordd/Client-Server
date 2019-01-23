@@ -62,6 +62,9 @@ body {
 </head>
 <body>
 
+
+    </div>
+</form>
 <div class="header">
   <h1>Min Medicin Læge</h1>
   <p>Din hjælp til at huske medicin</p>
@@ -76,7 +79,30 @@ body {
 </div>
 
 <b id="velkommen">Velkommen : <i><?php echo($_SESSION['login_cpr']); ?></i></b>
+<br></br>
 
+</body>
+<label for="pillenavn"><b>Pillenavn</b></label>
+<input type="pillenavn"  name="pillenavn" required>
+<br></br>
+
+<label for="antalP"><b>Antal Piller</b></label>
+<input type="antalP"  name="antalP" required>
+<br></br>
+
+<label for="tidspunkt"><b>Tidspunkt(er)</b></label>
+<input type="tidspunkt"  name="tidspunkt" required>
+<br></br>
+
+
+<label for="CPR"><b>CPR-nr</b></label>
+<input type="CRP" name="CPR" required>
+<br></br>
+
+<form action="registrernyprofil.php" method="post">
+  
+ 
+      <button type="submit">Send</button>
 
 
 </body>
