@@ -1,18 +1,99 @@
-<!doctype html>
-
-<html lang="da">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+<title>Min Medicin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+.format{
+    position: relative;
+    left : 0px;
+    top : 0px;
+    z-index : 10;
+}
 
+.formatny{
+    position: relative;
+    left : 983px;
+    top : 40px;
+    z-index : 10;
+}
+
+/* Style the header */
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1eb457;
+    color: rgb(255, 255, 255);
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+    font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* makes a grid */
+.grid-container {
+  display: grid;
+  grid: 150px / auto auto;
+  grid-gap: 10px;
+
+}
+
+</style>
 </head>
-
 <body>
+
+<div class="header">
+  <h1>Min Medicin</h1>
+  <p>Din hjælp til at huske medicin</p>
+</div>
+
+<div class="navbar">
+  <a href="#">Hjem</a>
+  <a href="#">Om os</a>
+  <a href="#">Hjælp</a>
+  <a href="lege_login.php" class="right">Ny bruger</a>
+  <a href="nybruger.html" class="right">Log ind</a>
+
+</div>
+
+
+</body>
   <script src="js/scripts.js"></script>
 </body>
 </html>
