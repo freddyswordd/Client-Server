@@ -108,7 +108,7 @@ body {
 
 <form action="connect.php" method="post">
   <div class="grid-container">
-        <img src="https://i.imgur.com/WmeusD6.jpg"> 
+        <img src="billeder/glade.jpg"> 
   
     <div class="format">
     <br></br>
