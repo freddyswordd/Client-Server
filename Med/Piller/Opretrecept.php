@@ -1,19 +1,11 @@
 <?
 
-$CPRnr = $_POST['CPRnr'];
-$f_navn = $_POST['f_navn'];
-$e_navn = $_POST['e_navn'];
-$ken = $_POST['ken'];
-$vegt = $_POST['vegt'];
-$adr = $_POST['adr'];
-$hus_nr = $_POST['hus_nr'];
-$tlf_nr = $_POST['tlf_nr'];
-$mail = $_POST['mail'];
-$kode = $_POST['kode'];
+$pillenavn = $_POST['pillenavn'];
+$antalp = $_POST['antalP'];
+$tid = $_POST['tidspunkt'];
+$CPR = $_POST['CPR'];
 
-
-if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($vegt)||
-     !empty($adr)|| !empty($hus_nr)|| !empty($tlf_nr)|| !empty($mail)|| !empty($kode)){
+if (!empty($pillenavn)|| !empty($antalp)|| !empty($tid)|| !empty($CRP) ){
     $host = "localhost";
     $db_username = "root";
     $db_password = "";
@@ -25,13 +17,13 @@ if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($
     if (mysqli_connect_error()){
         die('connect error('.mysqli_connect_errno().')'. mysqli_connect_error());
     }else{
-        $SELECT ="SELECT cprnr from profiler where cprnr=? Limit 1";
-        $INSERT = "INSERT Into profiler (cprnr, fornavn, efternavn, ken, vegt, adresse, husnummer, telefonnummer, mail, kodeord) values(?,?,?,?,?,?,?,?,?,?)";
+        $SELECT ="SELECT pillenavn from recept where pillenavn=? Limit 1";
+        $INSERT = "INSERT Into recept (pillenavn, antalP, tidspunkt, CPR) values(?,?,?,?)";
 
         $stmt = $conn -> prepare($SELECT);
-        $stmt->bind_param("i", $CPRnr);
+        $stmt->bind_param("s", $pillenavn);
         $stmt->execute();
-        $stmt->bind_result($CPRnr);
+        $stmt->bind_result($pillenavn);
         $stmt->store_result();
         $rnum = $stmt->num_rows;
 
@@ -39,7 +31,7 @@ if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($
             $stmt->close();
 
             $stmt = $conn->prepare($INSERT);
-            $stmt->bind_param("isssisiiss",$CPRnr, $f_navn, $e_navn, $ken, $vegt, $adr, $hus_nr, $tlf_nr, $mail, $kode);
+            $stmt->bind_param("ssii",$pillenavn, $antalp, $tid, $CPR);
             $stmt->execute();
             #echo "Data var indsat med succes";
             header('Location: brugerside.php');
@@ -52,7 +44,3 @@ if (!empty($CPRnr)|| !empty($f_navn)|| !empty($e_navn)|| !empty($ken)|| !empty($
 }else{
      echo "Du skal udfylde alle felter";
      die();
-}
-?>
-
-

@@ -1,3 +1,14 @@
+<?
+
+
+include('connect.php');
+if(isset($SESSION['login_cpr'])){
+    header("location: brugerside.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,8 +98,8 @@ body {
   <a href="#">Hjem</a>
   <a href="#">Om os</a>
   <a href="#">Hjælp</a>
-  <a href="#" class="right">Ny bruger</a>
-  <a href="#" class="right">Log ind</a>
+  <a href="lege_login.php" class="right">Ny bruger</a>
+  <a href="nybruger.html" class="right">Log ind</a>
 
 </div>
 
@@ -97,19 +108,18 @@ body {
 
 <form action="connect.php" method="post">
   <div class="grid-container">
-        <img src="glade.jpg"> 
+        <img src="billeder/glade.jpg"> 
   
     <div class="format">
     <br></br>
-      <label for="uname"><b>Brugernavn</b></label>
-      <input type="text" placeholder="Skriv Brugernavn" name="user" required>
+      <label for="cprnr"><b>CPR-nr</b></label>
+      <input type="cprnr" placeholder="Skriv CPR-nr" name="CPRnr" required>
       <br></br>
   
-      <label for="psw"><b>Kodeord</b></label>
-      <input type="password" placeholder="Skriv Kodeord" name="password" required>
+      <label for="kode"><b>Kodeord</b></label>
+      <input type="kode" placeholder="Skriv Kodeord" name="kode" required>
       <br></br>
       <input type="checkbox" checked="checked" name="Husk mig"> Husk mig
-      
       <button type="submit">Log på</button>
       <br></br> 
 
