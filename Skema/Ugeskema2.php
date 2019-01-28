@@ -3,14 +3,26 @@
 <head>
 <style>
 
-.row {
+#cbgrid {
+  display: grid;
+  grid-template-areas: "left right";
+  width: 150px;
+}
+input[type=checkbox] {
+  grid-area: right;
+}
+label {
+  grid-area: left;
+}
 
+.row {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
   grid-gap: 10px;
   background-color: #A9A9A9;
   padding: 10px;
   cursor: pointer;
+  color: white;
 }
 
 .row > div {
@@ -83,64 +95,115 @@
 
 <div class="row">
   <div class="item1" onclick="openTab('I1');" style="background:red;">Mandag </div>
-   <div id="I1" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Mandag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-   Mvh Din Læge 
-   </p>
-</div>
   <div class="item1" onclick="openTab('I2');" style="background:red;">Tirsdag </div>
-   <div id="I2" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Tirsdag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-   Mvh Din Læge 
-   </p>
-</div>
   <div class="item1" onclick="openTab('I3');" style="background:red;">Onsdag </div>
-  <div id="I3" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Onsdag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-   Mvh Din Læge 
-   </p>
-</div>
   <div class="item1" onclick="openTab('I4');" style="background:red;">Torsdag </div>
-  <div id="I4" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Torsdag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-   Mvh Din Læge 
-   </p>
-</div>
   <div class="item1" onclick="openTab('I5');" style="background:red;">Fredag </div>
-  <div id="I5" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Fredag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-   Mvh Din Læge 
-   </p>
-</div>
   <div class="item1" onclick="openTab('I6');" style="background:red;">Lørdag </div>
-  <div id="I6" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Lørdag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-   Mvh Din Læge 
-   </p>
-</div>
   <div class="item1" onclick="openTab('I7');" style="background:red;">Søndag </div>
-  <div id="I7" class="containerTab" style="display:none;background:red">
-   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-   <h2>Søndag</h2>
-   <p>I dag skal du tage din medicin kl. 12:30
-
-   Mvh Din Læge 
-   </p>
 </div>
 
+<div id="I1" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Mandag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
 
+<div id="I2" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Tirsdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I3" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Onsdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I4" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Torsdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I5" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Fredag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I6" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Lørdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I7" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Søndag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
 
 
 </body>
