@@ -3,49 +3,16 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-.month {
-    padding: 70px 25px;
-    width: 100%;
-    background: #1eb457;
-    text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.month ul {
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.month .prev {
-    float: left;
-    padding-top: 10px;
-}
-
-.month .next {
-    float: right;
-    padding-top: 10px;
-}
-
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
-}
-
-.weekdays li {
-    display: inline-block;
-    width: 12.2%;
-    color: #666;
-    text-align: center;
-    font-weight: bold;
-}
+/* The grid: Three equal columns that floats next to each other */
 .column {
   float: left;
   width: 33.33%;
@@ -68,101 +35,60 @@
   clear: both;
 }
 
-/* Closable button inside the image */
+/* Closable button inside the container tab */
 .closebtn {
   float: right;
   color: white;
   font-size: 35px;
   cursor: pointer;
 }
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-    .weekdays li {width: 13.1%;}
-}
-
-@media screen and (max-width: 420px) {
-    .weekdays li  {width: 12.5%;}
-    .time li .active {padding: 2px;}
-}
-
-@media screen and (max-width: 290px) {
-    .weekdays li {width: 12.2%;}
-}
 </style>
 </head>
 <body>
 
-<h1>Min Medicin Kalender</h1>
 
-<div class="month">      
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>
-      December<br>
-      <span style="font-size:18px">2018</span>
-    </li>
-  </ul>
-</div>
-
-
-<ul class="weekdays">
-  <li>Tid</li>   
-  <li>Mandag</li>
-  <li>Tirsdag</li>
-  <li>Onsdag</li>
-  <li>Torsdag</li>
-  <li>Fredag</li>
-  <li>Lordag</li>
-  <li>Sondag</li>
-</ul>
-
+<!-- Three columns -->
 <div class="row">
-  <div class="item1" onclick="openTab('I1');" atyle="background:red;">Morgen </div>
-  
-  <div class="item2"> 
-   5-11 
-   </div>
-  <div class="item3">  5-11 </div>  
-  <div class="item4">  5-11 </div>
-  <div class="item5">  5-11 </div>
-  <div class="item6">  5-11 </div>
-  <div class="item7">  5-11 </div>
-  <div class="item8">  5-11 </div>  
-  <div class="item9">Middag</div>
-  <div class="item10">  11-17 </div>
-  <div class="item11">  11-17 </div>
-  <div class="item12">  11-17 </div>
-  <div class="item13">  11-17 </div>
-  <div class="item14">  11-17 </div>
-  <div class="item15">  11-17 </div>
-  <div class="item15">  11-17 </div>
-  <div class="item15">Aften</div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  Nat </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    Box 1
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    Box 2
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Box 3
+  </div>
 </div>
 
-<div id="I1" class="containerTab" style="display:none;background:red">
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <h2>5-11</h2>
-  <p>I dag skal du tage din medicin kl. 12:30
-  Mvh Din Læge 
-  </p>
+  <h2>Box 1</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
 </div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Box 2</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Box 3</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
 
 </body>
-</html>
+</html> 
