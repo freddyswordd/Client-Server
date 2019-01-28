@@ -1,22 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
-  grid-gap: 10px;
-  background-color: #A9A9A9;
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 20px;
-}
-
 
 .month {
     padding: 70px 25px;
@@ -60,11 +46,35 @@
     text-align: center;
     font-weight: bold;
 }
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
 
+.containerTab {
+  padding: 20px;
+  color: white;
+}
 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-
-
+/* Closable button inside the image */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
 
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
@@ -108,9 +118,12 @@
   <li>Sondag</li>
 </ul>
 
-<div class="grid-container">
-  <div class="item1">Morgen </div>
-  <div class="item2">  5-11 </div>
+<div class="row">
+  <div class="item1" onclick="openTab('I1');" atyle="background:red;">Morgen </div>
+  
+  <div class="item2"> 
+   5-11 
+   </div>
   <div class="item3">  5-11 </div>  
   <div class="item4">  5-11 </div>
   <div class="item5">  5-11 </div>
@@ -141,6 +154,14 @@
   <div class="item15">  23-5 </div>
   <div class="item15">  23-5 </div>
   <div class="item15">  23-5 </div>
+</div>
+
+<div id="I1" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>5-11</h2>
+  <p>I dag skal du tage din medicin kl. 12:30
+  Mvh Din Læge 
+  </p>
 </div>
 
 </body>
