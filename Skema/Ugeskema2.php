@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Skema</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.grid-container {
+
+#cbgrid {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-template-areas: "left right";
+  width: 150px;
+}
+input[type=checkbox] {
+  grid-area: right;
+}
+label {
+  grid-area: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
   grid-gap: 10px;
   background-color: #A9A9A9;
   padding: 10px;
+  cursor: pointer;
+  color: white;
 }
 
-.grid-container > div {
+.row > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
@@ -21,7 +39,7 @@
 .month {
     padding: 70px 25px;
     width: 100%;
-    background: #1eb457;
+    background: #1abc9c;
     text-align: center;
 }
 
@@ -47,38 +65,19 @@
     padding-top: 10px;
 }
 
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
+.containerTab {
+  padding: 20px;
+  color: white;
 }
 
-.weekdays li {
-    display: inline-block;
-    width: 12.2%;
-    color: #666;
-    text-align: center;
-    font-weight: bold;
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 100px;
+  cursor: pointer;
 }
 
 
-
-
-
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-    .weekdays li {width: 13.1%;}
-}
-
-@media screen and (max-width: 420px) {
-    .weekdays li  {width: 12.5%;}
-    .time li .active {padding: 2px;}
-}
-
-@media screen and (max-width: 290px) {
-    .weekdays li {width: 12.2%;}
-}
 </style>
 </head>
 <body>
@@ -97,51 +96,118 @@
 </div>
 
 
-<ul class="weekdays">
-  <li>Tid</li>   
-  <li>Mandag</li>
-  <li>Tirsdag</li>
-  <li>Onsdag</li>
-  <li>Torsdag</li>
-  <li>Fredag</li>
-  <li>Lordag</li>
-  <li>Sondag</li>
-</ul>
-
-<div class="grid-container">
-  <div class="item1">Morgen </div>
-  <div class="item2">  5-11 </div>
-  <div class="item3">  5-11 </div>  
-  <div class="item4">  5-11 </div>
-  <div class="item5">  5-11 </div>
-  <div class="item6">  5-11 </div>
-  <div class="item7">  5-11 </div>
-  <div class="item8">  5-11 </div>  
-  <div class="item9">Middag</div>
-  <div class="item10">  11-17 </div>
-  <div class="item11">  11-17 </div>
-  <div class="item12">  11-17 </div>
-  <div class="item13">  11-17 </div>
-  <div class="item14">  11-17 </div>
-  <div class="item15">  11-17 </div>
-  <div class="item15">  11-17 </div>
-  <div class="item15">Aften</div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  17-23 </div>
-  <div class="item15">  Nat </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
-  <div class="item15">  23-5 </div>
+<div class="row">
+  <div class="item1" onclick="openTab('I1');" style="background:red;">Mandag </div>
+  <div class="item1" onclick="openTab('I2');" style="background:red;">Tirsdag </div>
+  <div class="item1" onclick="openTab('I3');" style="background:red;">Onsdag </div>
+  <div class="item1" onclick="openTab('I4');" style="background:red;">Torsdag </div>
+  <div class="item1" onclick="openTab('I5');" style="background:red;">Fredag </div>
+  <div class="item1" onclick="openTab('I6');" style="background:red;">Lørdag </div>
+  <div class="item1" onclick="openTab('I7');" style="background:red;">Søndag </div>
 </div>
+
+<div id="I1" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Mandag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I2" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Tirsdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I3" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Onsdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I4" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Torsdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I5" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Fredag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I6" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Lørdag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<div id="I7" class="containerTab" style="display:none;background:red">
+<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h2>Søndag</h2>
+<p>I dag skal du tage din medicin kl. 12:30
+<br>
+Mvh Din Læge 
+<div id="cbgrid">
+  <input type="checkbox">
+  <label>label for the checkbox</label>
+</div>
+</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
 
 </body>
 </html>
