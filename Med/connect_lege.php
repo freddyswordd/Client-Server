@@ -2,20 +2,22 @@
 session_start();
 $error = '';
 
-
+printf("test1");
 
 if (isset($_POST['CVRnr'])){
+    printf("test2");
     
-    if (empty($_POST['CVRnr'])|| empty($_POST['kode'])){
+    if (empty($_POST['CVRnr'])|| empty($_POST['kodeord'])){
         $error = "CPRnr eller kodeordet er forkert";
-        
+        printf("test3");
     
     }
     else
         {
-        
+            printf("test4");
+        $error = "CPRnr eller kodeordet er forkert";
         $CVRnr =$_POST['CVRnr'];
-        $kode = $_POST['kode'];
+        $kode = $_POST['kodeord'];
     
         $host = "localhost";
         $db_username = "root";
@@ -30,9 +32,9 @@ if (isset($_POST['CVRnr'])){
 
         #sikkerhed
         $stmt = $conn->prepare($query);
-        $stmt -> bind_param("is", $CVRnr, $kodeord);
+        $stmt -> bind_param("is", $CVRnr, $kode);
         $stmt -> execute();
-        $stmt -> bind_result($CVRnr, $kodeord);
+        $stmt -> bind_result($CVRnr, $kode);
         $stmt -> store_result();
 
         
@@ -40,8 +42,8 @@ if (isset($_POST['CVRnr'])){
         if ($stmt ->fetch() )
         {   
             echo("stmt til fetch.");
-            $_SESSION['login_cvr']=$CPRnr;#starter sessionen
-            header("location: brugerside.php"); #sender dig til brugersiden
+            #$_SESSION['login_cvr']=$CPRnr;#starter sessionen
+            header("location: brugerside_lege.php"); #sender dig til brugersiden
         }
         else
         {

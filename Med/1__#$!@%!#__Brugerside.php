@@ -1,16 +1,16 @@
 <?php
-#include('session.php');
-#if(!isset($_SESSION['login_cpr'])){
-#    header("location:index.php");
+include('session.php');
+if(!isset($_SESSION['login_cpr'])){
+    header("location:index.php");
 
-#}
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Min Medicin Læge</title>
+<title>Min Medicin</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -62,50 +62,24 @@ body {
 </head>
 <body>
 
-
-    </div>
-
 <div class="header">
-  <h1>Min Medicin Læge</h1>
+  <h1>Min Medicin</h1>
   <p>Din hjælp til at huske medicin</p>
 </div>
 
 <div class="navbar">
+  <a href="#">Min Plan</a>
+  <a href="#">Min Læge</a>
   <a href="log_ud.php"> Log ud</a> 
 
 
 </div>
 
+<b id="velkommen">Velkommen : <i><?php echo($_SESSION['login_cpr']); ?></i></b>
 
-<br></br>
+
 
 </body>
-
-<form action="nyrecept.php" method="post">
-
-
-<label for="pillenavn"><b>Pillenavn</b></label>
-<input type="pillenavn"  name="pillenavn" required>
-<br></br>
-
-<label for="antalP"><b>Antal Piller</b></label>
-<input type="antalP"  name="antalP" required>
-<br></br>
-
-<label for="tidspunkt"><b>Tidspunkt(er)</b></label>
-<input type="tidspunkt"  name="tidspunkt" required>
-<br></br>
-
-
-<label for="CPR"><b>CPR-nr</b></label>
-<input type="CRP" name="CPR" required>
-<br></br>
-  
- 
-      <button type="submit">Send</button>
-
-</form>
-
 
 
 

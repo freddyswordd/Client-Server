@@ -2,6 +2,15 @@
 session_start();
 $error = '';
 
+function connect(){
+    $stmt = $conn->prepare($query);
+    $stmt -> bind_param("is", $CPRnr, $kodeord);
+    $stmt -> execute();
+    $stmt -> bind_result($CPRnr, $kodeord);
+    $stmt -> store_result(); 
+}
+
+
 
 
 if (isset($_POST['CPRnr'])){
@@ -29,6 +38,8 @@ if (isset($_POST['CPRnr'])){
         $query = "SELECT cprnr, kodeord FROM profiler WHERE cprnr=$CPRnr AND kodeord=$kode LIMIT 1";
 
         #sikkerhed
+        
+        
         $stmt = $conn->prepare($query);
         $stmt -> bind_param("is", $CPRnr, $kodeord);
         $stmt -> execute();

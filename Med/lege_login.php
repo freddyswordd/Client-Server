@@ -1,18 +1,19 @@
 <?
-
-
-include('connect.php');
-if(isset($SESSION['login_cpr'])){
-    header("location: brugerside.php");
-}
-
+#
+#
+#include('connect.php');
+#if(isset($SESSION['login_cpr'])){
+#    header("location: brugerside.php");
+#}
+#
+#
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Min Medicin</title>
+<title>Læge</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -90,34 +91,34 @@ body {
 <body>
 
 <div class="header">
-  <h1>Min Medicin</h1>
-  <p>Din hjælp til at huske medicin</p>
+  <h1>Læge</h1>
+  <p>Din vej til patienterne</p>
 </div>
 
 <div class="navbar">
   <a href="index.php">Hjem</a>
   <a href="#">Om os</a>
   <a href="#">Hjælp</a>
-  <a href="nybruger.html" class="right">Ny bruger</a>
-  <a href="lege_login.php" class="right">Læge login</a>
+
+  <a href="lege_login" class="right">Læge login</a>
 
 </div>
 
 
 </body>
 
-<form action="connect.php" method="post">
+<form action="connect_lege.php" method="post">
   <div class="grid-container">
         <img src="billeder/glade.jpg"> 
   
     <div class="format">
     <br></br>
-      <label for="cprnr"><b>CPR-nr</b></label>
-      <input type="cprnr" placeholder="Skriv CPR-nr" name="CPRnr" required>
+      <label for="cvrnr"><b>CVR-nr</b></label>
+      <input type="cvrnr" placeholder="Skriv cvrnr" name="CVRnr" required>
       <br></br>
   
       <label for="kode"><b>Kodeord</b></label>
-      <input type="kode" placeholder="Skriv Kodeord" name="kode" required>
+      <input type="kode" placeholder="Skriv Kodeord" name="kodeord" required>
       <br></br>
       <input type="checkbox" checked="checked" name="Husk mig"> Husk mig
       <button type="submit">Log på</button>
@@ -130,6 +131,14 @@ body {
 </div>
 </form>
 
+#<form action="nybruger.html" method="post">
+
+    <div class="formatny">
+        <label>
+        <button type="newuser">Opret profil</button>
+        </label>
+    </div>
+</form>
 
 
 

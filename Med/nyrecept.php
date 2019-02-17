@@ -31,10 +31,10 @@ if (!empty($pillenavn)|| !empty($antalp)|| !empty($tid)|| !empty($CRP) ){
             $stmt->close();
 
             $stmt = $conn->prepare($INSERT);
-            $stmt->bind_param("ssii",$pillenavn, $antalp, $tid, $CPR);
+            $stmt->bind_param("siii",$pillenavn, $antalp, $tid, $CPR);
             $stmt->execute();
             #echo "Data var indsat med succes";
-            header('Location: brugerside.php');
+            header('Location: brugerside_lege.php');
         }else{
             echo "cprnummeret er allerede i brug";
         }
@@ -44,3 +44,5 @@ if (!empty($pillenavn)|| !empty($antalp)|| !empty($tid)|| !empty($CRP) ){
 }else{
      echo "Du skal udfylde alle felter";
      die();
+}
+?>
